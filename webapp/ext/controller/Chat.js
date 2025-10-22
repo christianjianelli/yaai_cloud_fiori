@@ -261,8 +261,6 @@ sap.ui.define([
 
                 let context = this._getContext();
 
-                return;
-
                 this.sendUserPrompt(userPrompt, context, apiKey);
 
                 document.getElementById("aaic-chat-user-text").value = ''; // Clear the textarea
