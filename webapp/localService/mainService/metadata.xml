@@ -59,6 +59,9 @@
                 <Property Name="TravelID" Type="Edm.String" Nullable="false" MaxLength="8"/>
                 <Property Name="AgencyID" Type="Edm.String" Nullable="false" MaxLength="6"/>
                 <Property Name="CustomerID" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="CustomerFirstName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="CustomerLastName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="CustomerEmail" Type="Edm.String" Nullable="false" MaxLength="256"/>
                 <Property Name="BeginDate" Type="Edm.Date"/>
                 <Property Name="EndDate" Type="Edm.Date"/>
                 <Property Name="BookingFee" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="variable"/>
@@ -165,6 +168,22 @@
                 <Annotation Term="SAP__common.Label" String="Customer ID"/>
                 <Annotation Term="SAP__common.QuickInfo" String="Flight Reference Scenario: Customer ID"/>
             </Annotations>
+            <Annotations Target="SAP__self.TravelType/CustomerFirstName">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="First Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Flight Reference Scenario: First Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TravelType/CustomerLastName">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Last Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Flight Reference Scenario: Last Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.TravelType/CustomerEmail">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="E-Mail Address"/>
+                <Annotation Term="SAP__common.Heading" String="E-Mail"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Flight Reference Scenario: Email Address"/>
+            </Annotations>
             <Annotations Target="SAP__self.TravelType/BookingFee">
                 <Annotation Term="SAP__measures.ISOCurrency" Path="CurrencyCode"/>
                 <Annotation Term="SAP__common.Label" String="Booking Fee"/>
@@ -252,6 +271,15 @@
                             <PropertyValue Property="Value" Path="CustomerID"/>
                         </Record>
                         <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerFirstName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerLastName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerEmail"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Value" Path="BeginDate"/>
                         </Record>
                         <Record Type="SAP__UI.DataField">
@@ -307,6 +335,15 @@
                             <PropertyValue Property="Value" Path="CustomerID"/>
                         </Record>
                         <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerFirstName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerLastName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerEmail"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Value" Path="BeginDate"/>
                         </Record>
                         <Record Type="SAP__UI.DataField">
@@ -323,9 +360,6 @@
                         </Record>
                         <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Value" Path="OverallStatus"/>
-                        </Record>
-                        <Record Type="SAP__UI.DataField">
-                            <PropertyValue Property="Value" Path="Attachment"/>
                         </Record>
                         <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Value" Path="MimeType"/>
@@ -357,17 +391,8 @@
                         <PropertyPath>CustomerID</PropertyPath>
                         <PropertyPath>BeginDate</PropertyPath>
                         <PropertyPath>EndDate</PropertyPath>
-                        <PropertyPath>BookingFee</PropertyPath>
-                        <PropertyPath>TotalPrice</PropertyPath>
                         <PropertyPath>Description</PropertyPath>
                         <PropertyPath>OverallStatus</PropertyPath>
-                        <PropertyPath>MimeType</PropertyPath>
-                        <PropertyPath>FileName</PropertyPath>
-                        <PropertyPath>CreatedBy</PropertyPath>
-                        <PropertyPath>CreatedAt</PropertyPath>
-                        <PropertyPath>LocalLastChangedBy</PropertyPath>
-                        <PropertyPath>LocalLastChangedAt</PropertyPath>
-                        <PropertyPath>LastChangedAt</PropertyPath>
                     </Collection>
                 </Annotation>
                 <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
@@ -460,6 +485,10 @@
                         <PropertyValue Property="FilterExpressionRestrictions">
                             <Collection>
                                 <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CustomerEmail"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                                <Record>
                                     <PropertyValue Property="Property" PropertyPath="Description"/>
                                     <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
                                 </Record>
@@ -485,6 +514,7 @@
                     <Record>
                         <PropertyValue Property="NonSortableProperties">
                             <Collection>
+                                <PropertyPath>CustomerEmail</PropertyPath>
                                 <PropertyPath>Description</PropertyPath>
                                 <PropertyPath>__EntityControl</PropertyPath>
                                 <PropertyPath>__OperationControl</PropertyPath>

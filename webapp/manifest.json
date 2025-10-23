@@ -88,9 +88,11 @@
       }
     },
     "resources": {
-      "css": [{
-          "uri": "css/style.css" 
-      }]
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
     },
     "routing": {
       "config": {},
@@ -132,7 +134,7 @@
                       "press": "travel.ext.controller.CustomActions.chat",
                       "visible": true,
                       "enabled": true,
-                      "requiresSelection": true,
+                      "requiresSelection": false,
                       "text": "AI Chat Assistant"
                     }
                   }

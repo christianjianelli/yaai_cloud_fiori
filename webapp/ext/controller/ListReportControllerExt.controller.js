@@ -15,6 +15,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension','travel/ext/controller/Chat
 				            "\n Travel Id: " + element.getProperty("TravelID") + 
 							"\n Description:" + element.getProperty("Description") + 
 							"\n Customer Id: " + element.getProperty("CustomerID") + 
+							"\n Customer Name: " + element.getProperty("CustomerFirstName") + " " + element.getProperty("CustomerLastName") +
+							"\n Customer Email: " + element.getProperty("CustomerEmail") + 
 							"\n Begin Date:" + element.getProperty("BeginDate") +
 							"\n Booking Fee:" + element.getProperty("BookingFee") + 
 							"\n Total Price:" + element.getProperty("TotalPrice") + 
@@ -22,7 +24,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension','travel/ext/controller/Chat
 							"\n\n";
 			}
 
-			//console.log(sContext);
+			console.log(sContext);
 
 			return sContext;
 						
