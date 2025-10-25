@@ -90,6 +90,9 @@
     "resources": {
       "css": [
         {
+          "uri": "css/chat.css"
+        },
+        {
           "uri": "css/style.css"
         }
       ]
@@ -135,6 +138,18 @@
                       "visible": true,
                       "enabled": true,
                       "requiresSelection": false,
+                      "text": "AI Chat Assistant"
+                    }
+                  }
+                }
+              },
+              "content": {
+                "header": {
+                  "actions": {
+                    "AIChatAssistant": {
+                      "press": "travel.ext.controller.CustomActions.chat",
+                      "visible": true,
+                      "enabled": true,
                       "text": "AI Chat Assistant"
                     }
                   }

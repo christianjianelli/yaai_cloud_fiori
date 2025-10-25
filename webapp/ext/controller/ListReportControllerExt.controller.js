@@ -1,4 +1,7 @@
-sap.ui.define(['sap/ui/core/mvc/ControllerExtension','travel/ext/controller/Chat'], function (ControllerExtension, Chat) {
+sap.ui.define([
+	"sap/ui/core/mvc/ControllerExtension",
+	"travel/ext/controller/Chat"
+], function (ControllerExtension, Chat) {
 	'use strict';
 
 	return ControllerExtension.extend('travel.ext.controller.MyControllerExtension', {
