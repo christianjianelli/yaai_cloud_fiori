@@ -29,7 +29,7 @@ sap.ui.define([
             // Create and append the script element for marked.js
             const script = document.createElement('script');
             //script.src = 'https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js';
-            script.src = '../../libs/marked.umd.js';
+            script.src = sap.ui.require.toUrl('travel/libs/marked.umd.js');
             
             document.head.appendChild(script);
 
@@ -317,7 +317,8 @@ sap.ui.define([
 
             switch (selectedValue) {
                 case 'OPENAI':
-                    url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_OPENAI?sap-client=100'; // Replace with your actual endpoint
+                    //url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_OPENAI?sap-client=100'; // Replace with your actual endpoint
+                    url = '/sap/bc/http/sap/ZCJS_HTTP_SERVICE_TEST?sap-client=100&api=OPENAI';
                     break;
                 
                 case 'GOOGLE':
@@ -325,7 +326,8 @@ sap.ui.define([
                     break;
                 
                 case 'ANTHROPIC':
-                    url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_ANTHROPIC?sap-client=100'; // Replace with your actual endpoint
+                    //url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_ANTHROPIC?sap-client=100'; // Replace with your actual endpoint
+                    url = '/sap/bc/http/sap/ZCJS_HTTP_SERVICE_TEST?sap-client=100&api=ANTHROPIC';
                     break;
                 
                 case 'MISTRAL':
