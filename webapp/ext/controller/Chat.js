@@ -308,6 +308,9 @@ sap.ui.define([
             let selectedValue = '';
             let url = '';
 
+            // Travel AI Agent ID
+            const agentId = '7EA3422BA1AC1FE0AE835528E8F90C68';
+
             const oSelect = document.getElementById('aaic-chat-api');
 
             if (oSelect) {
@@ -317,21 +320,19 @@ sap.ui.define([
 
             switch (selectedValue) {
                 case 'OPENAI':
-                    //url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_OPENAI?sap-client=100'; // Replace with your actual endpoint
-                    url = '/sap/bc/http/sap/ZCJS_HTTP_SERVICE_TEST?sap-client=100&api=OPENAI';
+                    url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_OPENAI?sap-client=100&agent=' + agentId; // Replace with your actual endpoint
                     break;
                 
                 case 'GOOGLE':
-                    url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_GOOGLE?sap-client=100'; // Replace with your actual endpoint
+                    url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_GOOGLE?sap-client=100&agent=' + agentId; // Replace with your actual endpoint
                     break;
                 
                 case 'ANTHROPIC':
-                    //url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_ANTHROPIC?sap-client=100'; // Replace with your actual endpoint
-                    url = '/sap/bc/http/sap/ZCJS_HTTP_SERVICE_TEST?sap-client=100&api=ANTHROPIC';
+                    url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_ANTHROPIC?sap-client=100&agent=' + agentId; // Replace with your actual endpoint
                     break;
                 
                 case 'MISTRAL':
-                    url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_MISTRAL?sap-client=100'; // Replace with your actual endpoint
+                    url = '/sap/bc/http/sap/YAAIC_HTTP_SERVICE_MISTRAL?sap-client=100&agent=' + agentId; // Replace with your actual endpoint
                     break;
             }
             
